@@ -9,8 +9,18 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         gender: document.getElementById('gender').value
     };
 
-    // You can handle form data here (e.g., send to a server or display it)
-    console.log('Form Data:', formData);
-
-    alert('Registration successful!');
+    fetch('http://127.0.0.1:5000/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert(data.message);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 });
