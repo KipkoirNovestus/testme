@@ -1,11 +1,12 @@
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
+    
     const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         phone: document.getElementById('phone').value,
         age: document.getElementById('age').value,
-        height: document.getElementById('height').value,
+        course: document.getElementById('course').value,
         gender: document.getElementById('gender').value
     };
 
